@@ -98,6 +98,7 @@ const config: Config = {
 			},
 		},
 	},
+
 	plugins: [tailwindAnimate, typography],
 };
 
