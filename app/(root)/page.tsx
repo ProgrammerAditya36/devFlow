@@ -55,6 +55,23 @@ const questions = [
 		views: 100,
 		createdAt: new Date(),
 	},
+	{
+		_id: 4,
+		title: 'How to use React Router?',
+		description: 'I want to learn how to use React Router.',
+		tags: [
+			{ _id: '1', name: 'react' },
+			{ _id: '2', name: 'javascript' },
+		],
+		author: {
+			_id: '1',
+			name: 'John Doe',
+		},
+		upvotes: 10,
+		answers: 5,
+		views: 100,
+		createdAt: new Date(),
+	},
 ];
 interface SearchParams {
 	searchParams: Promise<{ [key: string]: string }>;
