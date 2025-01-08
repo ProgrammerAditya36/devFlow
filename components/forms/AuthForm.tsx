@@ -1,6 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import Link from 'next/link';
 import {
 	DefaultValues,
 	FieldValues,
@@ -14,21 +15,14 @@ import { Button } from '@/components/ui/button';
 import {
 	Form,
 	FormControl,
-	FormDescription,
 	FormField,
 	FormItem,
 	FormLabel,
 	FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import Link from 'next/link';
 import ROUTES from '@/constants/routes';
 
-const formSchema = z.object({
-	username: z.string().min(2, {
-		message: 'Username must be at least 2 characters.',
-	}),
-});
 interface AuthFormProps<T extends FieldValues> {
 	schema: ZodType<T>;
 	defaultValues: T;
@@ -40,7 +34,6 @@ export default function AuthForm<T extends FieldValues>({
 	schema,
 	defaultValues,
 	formType,
-	onSubmit,
 }: AuthFormProps<T>) {
 	const form = useForm<z.infer<typeof schema>>({
 		resolver: zodResolver(schema),
@@ -56,7 +49,7 @@ export default function AuthForm<T extends FieldValues>({
 		<Form {...form}>
 			<form
 				onSubmit={form.handleSubmit(handleSubmit)}
-				className="space-y-6 mt-10"
+				className="mt-10 space-y-6"
 			>
 				{Object.keys(defaultValues).map((field) => (
 					<FormField
@@ -64,7 +57,7 @@ export default function AuthForm<T extends FieldValues>({
 						control={form.control}
 						name={field as Path<T>}
 						render={({ field }) => (
-							<FormItem className="flex-w-full flex-col gap-2.5">
+							<FormItem className="flex w-full flex-col gap-2.5">
 								<FormLabel className="paragraph-medium text-dark400_light700">
 									{field.name.charAt(0).toUpperCase() +
 										field.name.slice(1)}
