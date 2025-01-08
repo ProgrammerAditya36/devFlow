@@ -3,3 +3,4 @@ package-lock.json
 components.json
 postcss.config.mjs
 tailwind.config.ts
+vercel.json

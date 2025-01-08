@@ -1,0 +1,13 @@
+{
+	"version": 2,
+	"buildCommand": "next build",
+	"cleanUrls": true,
+	"git": {
+		"deploymentEnabled": {
+			"main": false
+		}
+	},
+	"github": {
+		"silent": true
+	}
+}
