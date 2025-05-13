@@ -1,6 +1,6 @@
 const Home = () => (
 	<>
-		<h1 className="font-space-grotesk h1-bold">
+		<h1 className="flex font-space-grotesk">
 			Welcome to the world of Next.js
 		</h1>
 	</>
